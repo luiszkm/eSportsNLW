@@ -6,7 +6,7 @@ interface GamerBannerProps{
 
 
 export function GamerBanner(props : GamerBannerProps){
-
+  
   return(
     <a href="#" className=' relative rounded-lg overflow-hidden'>
     <img src={props.bannerUrl} alt="" />
