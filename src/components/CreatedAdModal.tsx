@@ -8,6 +8,8 @@ import { Check, GameController } from 'phosphor-react';
 import { Input } from "./Form/Input";
 import { useEffect, useState } from 'react';
 
+const baseURL = import.meta.env.VITE_LINK_API;
+
 interface Game {
   id: string;
   title: string;
@@ -20,7 +22,7 @@ export function CreatedAdModal() {
 
 
   useEffect(() => {
-    fetch('http://localhost:3333/games')
+    fetch(`${baseURL}/games`)
       .then(response => response.json())
       .then(data => {
         setGames(data)

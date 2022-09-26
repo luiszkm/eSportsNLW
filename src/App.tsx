@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import * as Dialog from '@radix-ui/react-dialog';
 
+const baseURL = import.meta.env.VITE_LINK_API;
 import './styles/main.css'
 import logo from './assets/Logo.svg'
 import image from './assets/game.png'
@@ -22,10 +23,10 @@ interface Game {
 
 function App() {
   const [games, setGames] = useState<Game[]>([])
-  console.log(games);
 
   useEffect(() => {
-    fetch('http://localhost:3333/games')
+
+    fetch(`${baseURL}/games`)
       .then(response => response.json())
       .then(data => {
         setGames(data)
