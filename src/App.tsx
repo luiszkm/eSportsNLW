@@ -20,7 +20,6 @@ interface Game {
   }
 }
 
-
 function App() {
   const [games, setGames] = useState<Game[]>([])
 
